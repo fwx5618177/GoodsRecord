@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>table入库单</title>
+<style>
+.inputCargo {
+	width: 60%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.inputCargo td {
+	padding: 10px;
+}	
+
+.currentRegister {
+	text-align: center;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.currentRegister th {
+	width:10%;
+}
+	
+	
+.error_data {
+	border:2px solid red;
+}
+	
+.success_data {
+	border:2px solid green;
+}
+	
+img.img {
+	width:35px;
+	height:35px;
+}
+
+tr.newtable {
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+select {width:100%;}
+
+</style>
+<script type="text/javascript" src="./table.js"></script>
+</head>
+<body>
+<table class="inputCargo">
+<thead><h1>输入货物</h1></thead>
+<tr>
+	<td>条码：</td>
+	<td><input id="input-1_barCode" onChange="Barcode()" value="Qos1"></td>
+	<td><input type="submit" value="添加条码" id="submit-1" onClick="Barcode()"></td>
+	<td>价格：</td>
+	<td><input name="price" id="input-2_priceTag" onChange="Barcode()" value="30"></td>
+	<td>汇率：</td>
+	<td><input name="price" id="input-3_rateTag" onChange="Barcode()" value="6"></td>
+</tr>
+<tr>	
+	<td><input id="test" onchange="selectTest( this.id )" name="test" value="Q"></td>
+	<td>
+		<select id = "similarPattern">			
+		</select>
+	</td>
+	<td></td>
+	<td>人工(美元):</td>
+	<td><input name="price" id="input-4_dollarTag" onChange="Barcode()" value="5"></td>
+	<td>运输费(美元/磅):</td>
+	<td><input name="price" id="input-5_transportFeeTag" onChange="Barcode()" value="10"></td>
+</tr>
+<tr>
+	<td>品牌：</td>
+	<td></td>
+	<td></td>
+	<td>货号：</td>
+	<td id="cargoNum"></td>
+	<td>名称：</td>
+	<td id="name"></td>
+</tr>
+<tr>
+	<td>单价：</td>
+	<td id="output-1_singlePrice">￥0.00</td>
+	<td></td>
+	
+	<td>总成本：</td>
+	<td id="output-2_totalPrice">￥0.00</td>
+	<td></td>
+	<td></td>
+	
+</tr>	
+
+<br />	
+</table>
+<table>
+<thead><h1>当前登记</h1></thead>
+<tr>
+	<td>总单价:</td>
+	<td>￥0.0</td>
+	<td><input type="submit" name="submitData" value="提交" onClick="registerInf()"></td>
+</tr>
+</table>
+<hr />
+
+<table class="currentRegister">
+<tr>
+	<th>删除</th>
+	<th>条码</th>
+	<th>货号</th>
+	<th>价格</th>
+	<th>汇率</th>
+	<th>人民币价格</th>
+	<th>人工</th>
+	<th>运输费</th>
+	<th>总成本</th>
+</tr>
+</table>
+
+
+</body>
+</html>
